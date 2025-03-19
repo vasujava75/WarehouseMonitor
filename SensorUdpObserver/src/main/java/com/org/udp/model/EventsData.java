@@ -1,3 +1,3 @@
 package com.org.udp.model;
 
-public record EventsData(String sensorId,String data) { }
+public record EventsData(String sensorId,int data) { }
