@@ -1,5 +1,4 @@
 # Start the application locally
-* Run main method 
 * install netcat on laptop
 * install kafka on laptop
 * Run kakfa before starting application.
