@@ -68,7 +68,12 @@ public class WarehouseArchistreatorService {
     private void sendToKafka(EventsData eventsData) {
         String message = "sensor_id=" + eventsData.sensorId() + "; value=" + eventsData.data();
         ProducerRecord<String, String> record = new ProducerRecord<>(TOPIC, eventsData.sensorId(), message);
-        kafkaProducer.send(record);
+        kafkaProducer.send(record, (metadata, exception) -> {
+            if (exception != null) {
+                System.err.printf("Error sending message: %s%n", exception.getMessage());
+            } else {
+                System.out.printf("Sent message to topic %s partition %d offset %d%n", metadata.topic(), metadata.partition(), metadata.offset());
+            }});
         System.out.println("Sent data to Kafka: " + message);
     }
 }
