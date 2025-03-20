@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class WarehouseArchistreatorService {
 
-    private static final String TOPIC = "sensor-data";
+    private static final String TOPIC = "sensor-data-group";
     private KafkaProducer<String, String> kafkaProducer;
 
     public WarehouseArchistreatorService() {

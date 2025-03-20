@@ -1,6 +1,8 @@
 # Start the application locally
 * Run main method 
 * install netcat on laptop
+* install kakfa on laptop
+* Run kakfa before starting application.
 
 Run below commands in terminal for testing purpose
 * echo "sensor_id=t1; value=36" | nc -u -w1 127.0.0.1 3355
